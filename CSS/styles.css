@@ -1,0 +1,93 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: #000000;
+}
+
+.logo {
+
+}
+
+.logo a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.nav-links a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.burger {
+  position: relative;   /*Without thix, the burger becomes unclickable when the screen gets too small*/
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #FFFFFF;
+  margin: 5px;
+}
+
+@media screen and (max-width: 1080px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 0px;
+    height: 8vh;
+    background-color: inherit;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transform: translateY(0%);
+    opacity: 0%;
+  }
+  .burger {
+    display: block;
+  }
+
+}
+
+.nav-active {
+  opacity: 100%;
+  transform: translateY(100%);
+  width: 100%;
+  transition: transform 0.5s ease-in;
+  z-index: -1;
+}
+
+.toggle .line1{
+  transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.toggle .line2{
+  opacity: 0;
+}
+
+.toggle .line3{
+  transform: rotate(45deg) translate(-5px,-6px);
+}
