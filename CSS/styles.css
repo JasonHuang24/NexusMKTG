@@ -80,14 +80,14 @@ nav {
   z-index: -1;
 }
 
-.toggle .line1{
+.on .line1{
   transform: rotate(-45deg) translate(-5px,6px);
 }
 
-.toggle .line2{
+.on .line2{
   opacity: 0;
 }
 
-.toggle .line3{
+.on .line3{
   transform: rotate(45deg) translate(-5px,-6px);
 }
