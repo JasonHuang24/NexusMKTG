@@ -12,6 +12,45 @@ nav {
   background-color: #000000;
 }
 
+/*dropdown styling*/
+
+nav ul li{
+  position: relative;
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px 10px;
+}
+
+nav ul li ul {
+  display: none; /*dropdown creation*/
+  position: absolute;
+  background-color: #000000;
+  padding: 10px;
+  border-radius: 0px 0px 10px 10px; /*rounded bottom corners*/
+  z-index: 1;
+}
+
+nav ul li:hover ul { /*dropdown creation*/
+  display: block;
+}
+
+nav ul li ul li {
+  width: 400px; /*fit words on one line*/
+}
+
+nav ul li ul li a{
+  padding: 10px 10px;
+
+}
+
+nav ul li ul li a:hover{
+  background-color: grey;
+
+}
+
+/*logo*/
 .logo {
 
 }
@@ -21,6 +60,7 @@ nav {
   color: #FFFFFF;
 }
 
+/*navigation links*/
 .nav-links {
   display: flex;
   justify-content: space-around;
@@ -36,6 +76,7 @@ nav {
   list-style: none;
 }
 
+/*burger*/
 .burger {
   position: relative;   /*Without thix, the burger becomes unclickable when the screen gets too small*/
   display: none;
@@ -49,6 +90,7 @@ nav {
   margin: 5px;
 }
 
+/*Screen size 1080p or smaller*/
 @media screen and (max-width: 1080px) {
 
   body {
@@ -72,14 +114,17 @@ nav {
 
 }
 
+/*styling for navbar during shrunken page*/
 .nav-active {
   opacity: 100%;
   transform: translateY(100%);
   width: 100%;
   transition: transform 0.5s ease-in;
-  z-index: -1;
+  z-index: 1;
+ /* z-index: -1; educational comment, -1 makes it unclickable over an image*/
 }
 
+/*Burger into X*/
 .on .line1{
   transform: rotate(-45deg) translate(-5px,6px);
 }
@@ -90,4 +135,440 @@ nav {
 
 .on .line3{
   transform: rotate(45deg) translate(-5px,-6px);
+}
+
+/*defining classes for text over image*/
+
+.container {
+  position: relative;
+  color: white;
+  z-index: 0;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 525px;
+  height: 117px;
+}
+
+/*Headings*/
+
+h2 {
+  font-size: 50px;
+  text-align: center;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+
+h3 {
+  text-align: center;
+}
+
+h4 {
+  font-size: 21px;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-weight: normal;
+  font-size: 2.5rem;
+  font-weight: 400;
+  font-family: 'Montserrat',sans-serif;
+  line-height: 1.4;
+  text-transform: none;
+  letter-spacing: 2px;
+}
+/*unordered list classes*/
+
+/*div class*/
+.center-box {
+  width: 500px;
+  margin: auto;
+}
+/*div class*/
+.text-left {
+  display: inline-block;
+  text-align: left;
+}
+
+.specialties {
+  list-style: none;
+}
+
+/*span classes*/
+.whitebold {
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+/*id*/
+
+#specialties {
+  background-color: black;
+  color: gray;
+  padding: 10px;
+}
+
+#specialties h2, h3 {
+  color: #FFFFFF;
+}
+
+#intro {
+
+}
+
+.hands-typing {
+  opacity: 20%;
+  width: 100%;
+}
+
+/*Client reviews sectiom*/
+
+#client-reviews {
+  background-color: black;
+  color: gray;
+}
+
+.column {
+  float: left;
+  width: 350px;
+  padding: 10px;
+}
+
+.row {
+  display: flex; /*changed from table to flex to center. Guess table wasn't needed*/
+  justify-content: center;
+  line-height: 2;
+}
+
+.profile {
+  border-radius: 50%;
+  height: auto;
+  width: auto;
+  max-width: 70px;
+  max-height: 70px;
+  float:left;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.gray {
+  color: gray;
+}
+
+.display-flex {
+  display: flex;
+  width: 90px;
+  height: 20px;
+}
+
+.picture-name-profession {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.image-box {
+  width: 85px;
+  height: 70px;
+}
+.name-profession-box {
+  width: 150px;
+  height: 70px;
+  position: relative;
+  float: right;
+  line-height: 1; /*it inherits 2*/
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/*Projects section*/
+#projects {
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+
+.projects-ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  position: relative;
+  padding: 10px;
+}
+
+.container-projects-ul {
+  width: 50%;
+  transform: translateX(50%);
+}
+
+.gallery {
+  display: flex; /*changed to flex over grid. Grid wouldn't align things left*/
+  flex-wrap: wrap; /*important to shift things to a different row*/
+  padding: 10px;
+  width: 50%;
+  transform: translateX(50%);
+}
+
+.gallery figure { /*nested css, advanced stuff*/
+  margin: 3px;
+  width: 365px; /*different values from original to make it work*/
+  height: 230px;
+  overflow: hidden;/*overflow hidden will hide the stuff that can't fit in the box, cropping them out*/
+  cursor: pointer;
+  position: relative; /*Needed to fit the paragraph in the box*/
+}
+
+
+.gallery figure img { /*scaling and cropping image in css*/
+  width: 365px;
+  height: auto;
+  position: relative; /*make it relative to the figure*/
+  object-fit: cover; /*keep aspect ratio*/
+}
+
+.gallery figure:hover p {
+  background-color: white;
+  color: black;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+}
+
+.gallery-a {
+  display: block;
+}
+
+.gallery-hover-text {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 200px;
+  font-size: 20px;
+}
+
+.gallery-Picstage-1 {
+    transform: translateY(-305px); /*hard shift the image to the center*/
+}
+
+.gallery-Big-Shot-7s {
+  transform: translateY(-150px);
+}
+
+.filterFigure {
+  display: none;
+  float:left;
+}
+
+.container-projects-ul ul li {
+  cursor: pointer;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 0px;
+}
+
+/* Add a dark background to the active button */
+.btn.active {
+  color: #666;
+}
+
+/*Sections*/
+section {
+  background-color: black;
+  color: gray;
+  padding: 10px;
+}
+
+/*clients section*/
+
+.grid-clients {
+  display: grid;
+  grid-template-columns: repeat(9, 95px);
+  grid-auto-rows: 95px;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px;
+}
+
+.grid-clients img {
+  position: relative;
+  width: 100%;
+}
+
+/*corporate social justice section*/
+
+#corporate-social-justice p {
+  text-align: center;
+  font-size: 17px;
+  font-family: "Open Sans", sans-serif;
+  margin: 20px 0px 20px 0px;
+}
+
+.corporate-social-justice-container {
+  width: 50%;
+  transform: translateX(50%);
+}
+
+.corporate-social-justice-container-2 {
+  width: 50%;
+  transform: translateX(50%);
+  text-align: center;
+}
+
+.corporate-social-justice-container-2 a {
+  color: grey;
+  font-size: 17px;
+}
+
+
+.grid-corporate-social-justice {
+  display: grid;
+  grid-template-columns: repeat(6, 162px);
+  grid-auto-rows: 70px;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px;
+}
+
+.grid-corporate-social-justice img {
+  position: relative;
+  width: 100%;
+}
+
+/*book a consultation section*/
+
+#book-a-consultation h3 {
+  text-align: left;
+  font-size: 21px;
+  font-family: "Montserrat", sans-serif;
+  margin: 30px 0px 30px 0px;
+}
+
+#book-a-consultation ul {
+  font-size: 17px;
+  font-family: "Open Sans", sans-serif;
+  line-height: 2;
+}
+
+.book-a-consultation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 527px);
+  overflow: hidden;
+  justify-content: center;
+
+  /*Do not do max width: 1054px and grid-template-columns: 1fr, 1fr;
+  it won't center and there's some orange block you find on the html selector  */
+}
+
+.book-a-consultation-container {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.book-a-consultation-container2 {
+  width: 100%;
+  margin-left: 50px;
+}
+
+.book-a-consultation-container2 p {
+  font-size: 17px;
+  font-family: "Open Sans", sans-serif;
+  line-height: 2;
+}
+
+.book-a-consultation-container h2 {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.book-a-consultation-img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.container-box {
+  margin: 30px auto;
+  padding: 0 30px;
+
+}
+
+.book-a-consultation-strong {
+  color: white;
+}
+
+.book-a-cons-paragraph {
+  text-align: center;
+  margin: 20px;
+  color: white;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.center-flexbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.book-a-cons-button {
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  fill: #ffffff;
+  color: #ffffff;
+  background-color: black;
+  border-style: solid;
+  border-width: 2px 2px 2px 2px;
+  border-radius: 0px 0px 0px 0px;
+  padding: 15px 45px 15px 45px;
+  border-color: white;
+}
+
+/*footer section*/
+
+#footer footer p {
+  font-size: 17px;
+  font-family: "Open Sans", sans-serif;
+  margin-right: 10px;
+}
+
+#footer footer a {
+  cursor: pointer;
+}
+
+.img-unsplash {
+  width: 110px;
+  height: 40px;
+  transform: translateY(-13px);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
 }
