@@ -25,6 +25,10 @@ nav ul li a {
   padding: 10px 10px;
 }
 
+nav ul li a:hover {
+  border-bottom: 3px solid white;
+}
+
 nav ul li ul {
   display: none; /*dropdown creation*/
   position: absolute;
@@ -361,6 +365,7 @@ h1 {
 .container-projects-ul {
   width: 50%;
   transform: translateX(50%);
+  font-family: "Open Sans", sans-serif;
 }
 
 .gallery {
@@ -382,10 +387,12 @@ h1 {
 
 
 .gallery figure img { /*scaling and cropping image in css*/
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
-  position: relative; /*make it relative to the figure*/
-  object-fit: cover; /*keep aspect ratio*/
+  height: 100%;
+  object-fit: cover;
 }
 
 .gallery figure:hover p {
@@ -407,38 +414,22 @@ h1 {
   text-align: center;
   line-height: 200px;
   font-size: 20px;
+  font-family: "Open Sans", sans-serif;
 }
 
-.gallery-Picstage-1 {
-    transform: translateY(-305px); /*hard shift the image to the center*/
-}
-
-.gallery-Big-Shot-7s {
-  transform: translateY(-150px);
-}
-
+/* This was what was making my grid invisible in the begiining.
 .filterFigure {
   display: none;
   float:left;
-}
+}*/
 
 .container-projects-ul ul li {
   cursor: pointer;
+
 }
 
-/* The "show" class is added to the filtered elements */
-.show {
-  display: block;
-}
-
-.btn {
-  border: none;
-  outline: none;
-  padding: 0px;
-}
-
-/* Add a dark background to the active button */
-.btn.active {
+/* gray color to selected filter list item */
+.container-projects-ul ul li.active {
   color: #666;
 }
 
