@@ -197,6 +197,18 @@ nav ul li ul li a:hover{
   background: linear-gradient(180deg, #000000C4 71%, #000000 100%);
 }
 
+@media screen and (max-width: 600px) {
+
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 117px;
+  }
+}
+
 /*Headings*/
 
 h2 {
@@ -252,6 +264,14 @@ h1 {
 .whitebold {
   color: #FFFFFF;
   font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+
+  .center-box {
+    width: 100%;
+    margin: auto;
+  }
 }
 
 /*id*/
@@ -343,6 +363,30 @@ h1 {
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+@media screen and (max-width: 850px) { /*don't want to rewrite the code for full responsiveness*/
+
+.display-flex {
+  width: 100%;
+  height: 100%;
+}
+
+.name-profession-box {
+  width: 100%;
+  height: 100%;
+  top: 40px;
+}
+
+.image-box {
+  width: 100%;
+  height: 100%;
+}
+
+.column {
+  width: 100%;
+}
+
 }
 
 /*Projects section*/
@@ -456,6 +500,13 @@ section {
   width: 100%;
 }
 
+@media screen and (max-width: 1200px) {
+
+  .grid-clients {
+    grid-template-columns: repeat(3, 95px);
+  }
+}
+
 /*corporate social justice section*/
 
 #corporate-social-justice p {
@@ -501,6 +552,14 @@ section {
 .grid-corporate-social-justice img {
   position: relative;
   width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+
+  .grid-corporate-social-justice {
+    grid-template-columns: repeat(2, 162px);
+  }
+
 }
 
 /*book a consultation section*/
@@ -604,6 +663,18 @@ section {
   cursor: pointer;
   background-color: #C9C9C9; /* light grey */
 }
+
+@media screen and (max-width: 1200px) {
+
+  .book-a-consultation-grid {
+    grid-template-columns: repeat(1, 527px);
+  }
+
+  .book-a-consultation-container2 {
+    margin-left: 0px;
+  }
+}
+
 /*footer section*/
 
 #footer footer p {

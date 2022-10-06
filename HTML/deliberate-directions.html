@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
   <head>
     <meta charset="utf-8">
     <title></title>
+    <!--JQuery for navigation bar-->
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+    integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
   </head>
+
   <body>
     <h1>deliberate directions</h1>
     <h2><a href="../index.html">Home</a></h2>
+
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+    $(function(){
+      $("#nav-placeholder").load("navigation-bar.html");
+    });
+    </script>
+    <!--end of Navigation bar-->
+
   </body>
+
 </html>
