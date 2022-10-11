@@ -1,4 +1,250 @@
-body {
-  background-color: black;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+body{
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+  font-family: 'Noto Serif', serif;
+  max-width: 1200px;
+}
+p, h1, h2, h3, a, ul{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: #222;
+}
+
+footer{
+  color: #777;
+  text-align: center;
+  margin: 80px auto 20px;
+}
+h2{
+  margin-bottom: 40px;
+}
+h3{
+  text-transform: capitalize;
+  margin-bottom: 8px;
+}
+.content{
+  margin-left: 20px;
+}
+
+/* index styles */
+.blogs a{
+  display: block;
+  margin: 40px 0;
+  padding-left: 30px;
+  border-left: 6px solid crimson;
+}
+.blogs a:hover h3{
+  color: crimson;
+}
+
+/* details styles */
+.details{
+  position: relative;
+}
+.delete{
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  padding: 8px;
+}
+.delete:hover{
+  cursor: pointer;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
+}
+
+/* create styles */
+.create-blog form{
+  max-width: 400px;
+  margin: 0 auto;
+}
+.create-blog input,
+.create-blog textarea{
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+}
+.create-blog label{
+  display: block;
+  margin-top: 24px;
+}
+textarea{
+  height: 120px;
+}
+.create-blog button{
+  margin-top: 20px;
+  background: crimson;
   color: white;
+  padding: 6px;
+  border: 0;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+/*navbar styling*/
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 1vh;
+  background-color: #000000;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+}
+
+/*dropdown styling*/
+
+nav ul li{
+  position: relative;
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px 10px;
+}
+
+nav ul li a:hover {
+  border-bottom: 3px solid white;
+}
+
+nav ul li ul {
+  display: none; /*dropdown creation*/
+  position: absolute;
+  background-color: #000000;
+  padding: 10px;
+  border-radius: 0px 0px 10px 10px; /*rounded bottom corners*/
+  z-index: 1; /*will be behind image background if below 1*/
+}
+
+nav ul li:hover ul { /*dropdown creation*/
+  display: block;
+}
+
+nav ul li ul li {
+  width: 400px; /*fit words on one line*/
+}
+
+nav ul li ul li a{
+  padding: 10px 10px;
+
+}
+
+nav ul li ul li a:hover{
+  background-color: #00BBB2; /*medium dark cyan*/
+
+}
+
+/*logo*/
+.logo {
+
+}
+
+.logo a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+/*navigation links*/
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.nav-links a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.down-caret { /*borrowed code from codepen, works great*/
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 5px 0 5px;
+  border-color: #ffffff transparent transparent transparent;
+  display: inline-block;
+  margin-left: 6px;
+  top: -3px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: all .25s ease-in;
+}
+
+/*burger*/
+.burger {
+  position: relative;   /*Without thix, the burger becomes unclickable when the screen gets too small*/
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #FFFFFF;
+  margin: 5px;
+}
+
+/*Screen size 1080p or smaller*/
+@media screen and (max-width: 1080px) {
+
+  body {
+    overflow-x: hidden;
+    position: relative; /*Had to mess with the body to make navigation bar work.*/
+    z-index: -2; /*Had to mess with the body to make navigation bar work.*/
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 0px;
+    height: 2vh;
+    background-color: inherit;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transform: translateY(0%);
+    opacity: 0%;
+  }
+
+  nav ul li:hover ul { /*dropdown creation*/
+    display: block;
+    top: 30px; /*fixes gap*/
+    z-index: 0;
+  }
+
+  .burger {
+    display: block;
+  }
+
+}
+
+/*styling for navbar during shrunken page*/
+.nav-active {
+  opacity: 100%;
+  transform: translateY(100%);
+  width: 100%;
+  transition: transform 0.5s ease-in;
+  position: absolute;
+  z-index: 0;
+ /* z-index: -1; educational comment, -1 makes it unclickable over an image*/
+}
+
+/*Burger into X*/
+.on .line1{
+  transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.on .line2{
+  opacity: 0;
+}
+
+.on .line3{
+  transform: rotate(45deg) translate(-5px,-6px);
 }

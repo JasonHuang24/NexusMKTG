@@ -1,40 +1,43 @@
 //Express.js
-
 const express = require("express");
 const bodyParser = require("body-parser");
-
+const morgan = require("morgan");
+const mongoose = require('mongoose');
+const adminRoutes = require('./routes/adminRoutes')
 //express app
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 
-//listen for requests
-app.listen(3000, function(){
-  console.log("Server is running on port 3000.");
-})
+// connect to mongodb & listen for requests
+const dbURI = "mongodb+srv://xinguanghuang:3XaSi1N6uL6Dj62d@cluster0.okasz7m.mongodb.net/node-tuts?retryWrites=true&w=majority";
+mongoose.connect(dbURI)
+  .then((result) => app.listen(3000))
+  .catch((err) => console.log(err));
 
 //register view engine
 app.set('view engine', 'ejs');
 
-app.get("/", function(req, res){
-  res.sendFile("/index.html", {root: __dirname});
-});
-
-app.get("/deliberate-directions", function(req, res){
-  res.sendFile("/HTML/deliberate-directions.html", {root: __dirname});
-});
-
-//redirects
-app.get("/deliberate", (req, res) => {
-  res.redirect('/deliberate-directions');
-});
-
-//This should add my CSS and other folders
-app.use(express.static(__dirname + '/CSS'));
+//Middleware and static files
+app.use(morgan('dev')); //morgan is a Node. js and Express middleware to log HTTP requests and errors, and simplifies the process.
+app.use(express.urlencoded({extended:true}));
+app.use(express.static(__dirname + '/CSS')); //This should add my CSS and other folders
 app.use(express.static(__dirname + '/images'));
 app.use(express.static(__dirname + '/JS'));
 app.use(express.static(__dirname + '/HTML'));
 
+//routes
+app.get("/", function(req, res){
+  res.render('index', {title: 'Home'})
+});
+
+app.get("/deliberate-directions", function(req, res){
+  res.render('deliberate-directions', { title: 'Deliberate Directions' })
+});
+
+//admin routes
+app.use('/admin', adminRoutes);
+
 //404 Page, needs to be at the bottom or else will fire before redirects.
 app.use((req, res) => {
-  res.status(404).sendFile("/HTML/404.html", {root: __dirname});
+  res.status(404).render('404', {title:'404'});
 });
