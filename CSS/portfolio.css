@@ -1,10 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
 body{
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 0 20px;
   font-family: 'Noto Serif', serif;
-  max-width: 1200px;
+
 }
 p, h1, h2, h3, a, ul{
   margin: 0;
@@ -204,7 +201,7 @@ nav ul li ul li a:hover{
   .nav-links {
     position: absolute;
     top: 0px;
-    height: 2vh;
+    height: 4vh;
     background-color: inherit;
     display: flex;
     flex-direction: row;
@@ -215,7 +212,6 @@ nav ul li ul li a:hover{
 
   nav ul li:hover ul { /*dropdown creation*/
     display: block;
-    top: 30px; /*fixes gap*/
     z-index: 0;
   }
 
@@ -228,11 +224,11 @@ nav ul li ul li a:hover{
 /*styling for navbar during shrunken page*/
 .nav-active {
   opacity: 100%;
-  transform: translateY(100%);
+  transform: translateY(90%);
   width: 100%;
   transition: transform 0.5s ease-in;
   position: absolute;
-  z-index: 0;
+  z-index: 1;
  /* z-index: -1; educational comment, -1 makes it unclickable over an image*/
 }
 
