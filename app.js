@@ -31,7 +31,7 @@ app.get("/", function(req, res){
 });
 
 app.get("/deliberate-directions", function(req, res){
-  res.render('deliberate-directions', { title: 'Deliberate Directions' })
+  res.render('website portfolio/deliberate-directions', { title: 'Deliberate Directions' })
 });
 
 //admin routes

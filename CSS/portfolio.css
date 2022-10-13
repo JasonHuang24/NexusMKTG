@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
 body{
   font-family: 'Noto Serif', serif;
+  background-color: pink;
 
 }
 p, h1, h2, h3, a, ul{
@@ -14,6 +15,18 @@ footer{
   color: #777;
   text-align: center;
   margin: 80px auto 20px;
+  display: flex;
+  justify-content: center;
+}
+#footer footer p {
+  font-size: 17px;
+  font-family: "Open Sans", sans-serif;
+  margin-right: 10px;
+}
+.img-unsplash {
+  width: 110px;
+  height: 40px;
+  transform: translateY(-13px);
 }
 h2{
   margin-bottom: 40px;
@@ -94,20 +107,16 @@ nav {
 }
 
 /*dropdown styling*/
-
 nav ul li{
   position: relative;
 }
-
 nav ul li a {
   display: block;
   padding: 10px 10px;
 }
-
 nav ul li a:hover {
   border-bottom: 3px solid white;
 }
-
 nav ul li ul {
   display: none; /*dropdown creation*/
   position: absolute;
@@ -116,30 +125,22 @@ nav ul li ul {
   border-radius: 0px 0px 10px 10px; /*rounded bottom corners*/
   z-index: 1; /*will be behind image background if below 1*/
 }
-
 nav ul li:hover ul { /*dropdown creation*/
   display: block;
 }
-
 nav ul li ul li {
   width: 400px; /*fit words on one line*/
 }
-
 nav ul li ul li a{
   padding: 10px 10px;
-
 }
-
 nav ul li ul li a:hover{
   background-color: #00BBB2; /*medium dark cyan*/
-
 }
 
 /*logo*/
 .logo {
-
 }
-
 .logo a {
   text-decoration: none;
   color: #FFFFFF;
@@ -151,16 +152,13 @@ nav ul li ul li a:hover{
   justify-content: space-around;
   width: 50%;
 }
-
 .nav-links a {
   color: #FFFFFF;
   text-decoration: none;
 }
-
 .nav-links li {
   list-style: none;
 }
-
 .down-caret { /*borrowed code from codepen, works great*/
   width: 0;
   height: 0;
@@ -181,7 +179,6 @@ nav ul li ul li a:hover{
   display: none;
   cursor: pointer;
 }
-
 .burger div {
   width: 25px;
   height: 3px;
@@ -209,7 +206,6 @@ nav ul li ul li a:hover{
     transform: translateY(0%);
     opacity: 0%;
   }
-
   nav ul li:hover ul { /*dropdown creation*/
     display: block;
     z-index: 0;
@@ -218,7 +214,6 @@ nav ul li ul li a:hover{
   .burger {
     display: block;
   }
-
 }
 
 /*styling for navbar during shrunken page*/
@@ -236,11 +231,77 @@ nav ul li ul li a:hover{
 .on .line1{
   transform: rotate(-45deg) translate(-5px,6px);
 }
-
 .on .line2{
   opacity: 0;
 }
-
 .on .line3{
   transform: rotate(45deg) translate(-5px,-6px);
 }
+
+/*Website portfolio styling*/
+#carousel {
+}
+.carousel {
+  position: relative;
+  height: 600px;
+  width: 80%;
+  margin: 0 auto;
+}
+.carousel__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.carousel__track-container {
+  background: lightgreen;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.carousel__track {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+  height: 100%;
+  transition: transform 250ms ease-in;
+}
+.carousel__slide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+.carousel__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.carousel__button--left {
+  left: -40px;
+}
+.carousel__button--right {
+  right: -40px;
+}
+.carousel__nav {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+.carousel__indicator {
+  border: 0;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  background: rgba(0,0,0,.3);
+  margin: 0 12px;
+  cursor: pointer;
+}
+.carousel__indicator.current-slide{
+  background: rgba(0,0,0,.75);
+}
+
+.is-hidden {display: none;}

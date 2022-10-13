@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<%- include('../partials/head-sublinks.ejs') %>
+
+  <body>
+
+    <%- include('../partials/nav.ejs') %>
+
+    <section id="carousel">
+
+      <div class="carousel">
+        <button class="carousel__button carousel__button--left is-hidden">
+          <img src="/website portfolio/deliberate directions/chevron-left.svg">
+        </button>
+          <div class="carousel__track-container">
+            <ul class="carousel__track">
+              <li class="carousel__slide current-slide"><img class="carousel__image"src= "website portfolio/deliberate directions/Deliberate-Directions-1.webp" alt=""></li>
+              <li class="carousel__slide"><img class="carousel__image"src= "website portfolio/deliberate directions/Deliberate-Directions-2.webp" alt=""></li>
+              <li class="carousel__slide"><img class="carousel__image"src= "website portfolio/deliberate directions/Deliberate-Directions-3.webp" alt=""></li>
+              <li class="carousel__slide"><img class="carousel__image"src= "website portfolio/deliberate directions/Deliberate-Directions-4.webp" alt=""></li>
+              <li class="carousel__slide"><img class="carousel__image"src= "website portfolio/deliberate directions/Deliberate-Directions-5.webp" alt=""></li>
+              <li class="carousel__slide"><img class="carousel__image"src= "website portfolio/deliberate directions/Deliberate-Directions-6.webp" alt=""></li>
+              <li class="carousel__slide"><img class="carousel__image"src= "website portfolio/deliberate directions/Deliberate-Directions-7.webp" alt=""></li>
+              <li class="carousel__slide"><img class="carousel__image"src= "website portfolio/deliberate directions/Deliberate-Directions-8.webp" alt=""></li>
+              <li class="carousel__slide"><img class="carousel__image"src= "website portfolio/deliberate directions/Deliberate-Directions-9.webp" alt=""></li>
+              <li class="carousel__slide"><img class="carousel__image"src= "website portfolio/deliberate directions/Deliberate-Directions-10.webp" alt=""></li>
+              <li class="carousel__slide"><img class="carousel__image"src= "website portfolio/deliberate directions/Deliberate-Directions-11.webp" alt=""></li>
+            </ul>
+          </div>
+        <button class="carousel__button carousel__button--right">
+          <img src="/website portfolio/deliberate directions/chevron-right.svg">
+        </button>
+
+        <div class="carousel__nav">
+          <button class="carousel__indicator current-slide"></button>
+          <button class="carousel__indicator"></button>
+          <button class="carousel__indicator"></button>
+          <button class="carousel__indicator"></button>
+          <button class="carousel__indicator"></button>
+          <button class="carousel__indicator"></button>
+          <button class="carousel__indicator"></button>
+          <button class="carousel__indicator"></button>
+          <button class="carousel__indicator"></button>
+          <button class="carousel__indicator"></button>
+          <button class="carousel__indicator"></button>
+        </div>
+      </div>
+
+    </section>
+
+    <section id ="description">
+
+    </section>
+
+    <section id="footer">
+      <%- include('../partials/footer.ejs') %>
+    </section>
+
+    <!--link to javascript file-->
+    <script src="index.js">
+    </script>
+    <script src="carousel.js">
+
+    </script>
+  </body>
+
+</html>
