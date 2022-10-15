@@ -29,11 +29,17 @@ app.use(express.static(__dirname + '/HTML'));
 app.get("/", function(req, res){
   res.render('index', {title: 'Home'})
 });
+app.get("/index", (req, res) => {
+  res.redirect('/')
+});
 
 app.get("/deliberate-directions", function(req, res){
   res.render('website portfolio/deliberate-directions', { title: 'Deliberate Directions' })
 });
 
+app.get("/pass-request", (req, res) => {
+  res.render('website portfolio/pass-request', { title: 'PASS-Request' })
+});
 //admin routes
 app.use('/admin', adminRoutes);
 

@@ -13,6 +13,12 @@ nav {
   background-color: #000000;
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
+  position: fixed; /*stackoverflow aid, fix it at top*/
+  top: 0px;
+  width: 100%;
+}
+.navbar-class {
+  z-index: 3; /*2 is still behind indicators*/
 }
 
 /*dropdown styling*/
