@@ -175,6 +175,10 @@ nav ul li ul li a:hover{
 }
 
 /*Intro section, defining classes for text over image*/
+#intro {
+ position: relative;
+ z-index: -2;
+}
 
 .container {
   position: relative;
@@ -248,9 +252,8 @@ h1 {
   text-transform: none;
   letter-spacing: 2px;
 }
-/*Specialities section, unordered list classes*/
 
-/*div class*/
+/*Specialities section, unordered list classes*/
 .center-box {
   width: 575px;
   margin: auto;
@@ -281,8 +284,6 @@ h1 {
   }
 }
 
-/*id*/
-
 #specialties {
   background-color: black;
   color: #C9C9C9; /* light grey */
@@ -297,30 +298,30 @@ h1 {
   margin: 10px 0;
 }
 
-#intro {
- position: relative;
- z-index: -2;
-}
-
 /*Client reviews sectiom*/
 
 #client-reviews {
   background-color: black;
-  color: #C9C9C9; /* light grey */
+  color: #C9C9C9;
+  padding: 5em;
 }
 
-.column {
-  float: left;
-  width: 350px;
-  padding: 10px;
+@media screen and (min-width: 50em) {
+  .client-reviews-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+
+    padding-block: 2rem;
+    width: min(95%, 70rem);
+    margin-inline: auto;
+  }
 }
 
-.row {
-  display: flex; /*changed from table to flex to center. Guess table wasn't needed*/
-  justify-content: center;
-  line-height: 2;
+.client-review {
   font-family: "Open Sans", sans-serif;
   font-size: 17px;
+  line-height: 2;
 }
 
 .profile {
@@ -330,14 +331,6 @@ h1 {
   max-width: 70px;
   max-height: 70px;
   float:left;
-}
-
-.text-decoration-none {
-  text-decoration: none;
-}
-
-.gray {
-  color: #C9C9C9; /* light grey */
 }
 
 .display-flex {
@@ -363,37 +356,18 @@ h1 {
   float: right;
   line-height: 1; /*it inherits 2*/
 }
-
+.name-profession-box ul li a {
+ text-decoration: none;
+}
+.profession {
+  color: #C9C9C9;
+}
 .vertical-center {
   margin: 0;
   position: absolute;
   top: 50%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-}
-
-@media screen and (max-width: 850px) { /*don't want to rewrite the code for full responsiveness*/
-
-.display-flex {
-  width: 100%;
-  height: 100%;
-}
-
-.name-profession-box {
-  width: 100%;
-  height: 100%;
-  top: 40px;
-}
-
-.image-box {
-  width: 100%;
-  height: 100%;
-}
-
-.column {
-  width: 100%;
-}
-
 }
 
 /*Projects section*/
@@ -425,17 +399,24 @@ h1 {
   padding: 10px;
   width: 60%;
   transform: translateX(40%);
+  margin-bottom: 5em;
 }
 
 .gallery figure { /*nested css, advanced stuff*/
   margin: 3px;
-  width: 400px; /*different values from original to make it work*/
-  height: 250px;
+  width: 25em; /*different values from original to make it work*/
+  height: 15em;
   overflow: hidden;/*overflow hidden will hide the stuff that can't fit in the box, cropping them out*/
   cursor: pointer;
   position: relative; /*Needed to fit the paragraph in the box*/
 }
 
+@media screen and (max-width: 600px) {
+  .gallery figure {
+    max-width: 15em;
+    max-height: 10em;
+  }
+}
 
 .gallery figure img { /*scaling and cropping image in css*/
   position: absolute;
@@ -468,15 +449,8 @@ h1 {
   font-family: "Open Sans", sans-serif;
 }
 
-/* This was what was making my grid invisible in the begiining.
-.filterFigure {
-  display: none;
-  float:left;
-}*/
-
 .container-projects-ul ul li {
   cursor: pointer;
-
 }
 
 /* gray color to selected filter list item */
@@ -492,7 +466,6 @@ section {
 }
 
 /*clients section*/
-
 .grid-clients {
   display: grid;
   grid-template-columns: repeat(9, 95px);
@@ -586,7 +559,7 @@ section {
 
 .book-a-consultation-grid {
   display: grid;
-  grid-template-columns: repeat(2, 527px);
+  grid-template-columns: repeat(2, 33em);
   overflow: hidden;
   justify-content: center;
   margin-bottom: 20px;
@@ -671,15 +644,16 @@ section {
   background-color: #C9C9C9; /* light grey */
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1080px) {
 
   .book-a-consultation-grid {
-    grid-template-columns: repeat(1, 527px);
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .book-a-consultation-container2 {
     margin-left: 0px;
   }
+
 }
 
 /*footer section*/

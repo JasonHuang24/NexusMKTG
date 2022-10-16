@@ -209,14 +209,11 @@ nav ul li ul li a:hover{
 
   .nav-links {
     position: absolute;
-    top: 0px;
-    height: 4vh;
     background-color: inherit;
-    display: flex;
+    display: none;
     flex-direction: row;
     align-items: center;
     transform: translateY(0%);
-    opacity: 0%;
   }
   nav ul li:hover ul { /*dropdown creation*/
     display: block;
@@ -227,15 +224,22 @@ nav ul li ul li a:hover{
     display: block;
   }
 }
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.fade-in-image { animation: fadeIn 2s; }
 
 /*styling for navbar during shrunken page*/
 .nav-active {
   opacity: 100%;
-  transform: translateY(90%);
+  transform: translateY(100%);
   width: 100%;
   transition: transform 0.5s ease-in;
   position: absolute;
   z-index: 1;
+  display: flex;
+  height: 4vh;
  /* z-index: -1; educational comment, -1 makes it unclickable over an image*/
 }
 
@@ -250,6 +254,18 @@ nav ul li ul li a:hover{
   transform: rotate(45deg) translate(-5px,-6px);
 }
 
+@media screen and (min-width: 1080px) {
+  /*styling for navbar during shrunken page*/
+  .nav-active {
+    display: none;
+   /* z-index: -1; educational comment, -1 makes it unclickable over an image*/
+  }
+  /*Burger into X*/
+  .on .line1{
+  display: none;
+  }
+}
+
 /*Website portfolio styling*/
 #carousel {
   color: #C9C9C9;
@@ -260,13 +276,22 @@ nav ul li ul li a:hover{
   padding-left: 40px;
 }
 .carousel {
-  width: 910px;
-  height: 507px;
+  max-width: 57em;
+  height: 30em;
+  margin-right: 2em;
+  margin-top: 10em;
+  margin-bottom: 5em;
 }
 
 .carousel-inner {
-  width: 850px;
-  height: 477px;
+  max-width: 57em;
+  height: 30em;
+}
+
+.responsive-image {
+  width:100%;
+  height: 30em;
+  object-fit: cover;
 }
 
 .carousel-control-next {
@@ -274,7 +299,7 @@ nav ul li ul li a:hover{
   height: fit-content;
   top: 45%;
   transform: translateY(-50%);
-  transform: translateX(10px);
+  transform: translateX(30px);
 }
 
 .carousel-control-prev {
@@ -285,22 +310,110 @@ nav ul li ul li a:hover{
   transform: translateX(10px);
 }
 .carousel-indicators {
-  transform: translateY(20px);
-}
-.carousel-grid {
-  display: flex;
-  justify-content: center;
-  margin-top: 378px;
-  margin-bottom: 378px;
-}
-.carousel-grid-description-container {
-  width: 390px;
-  height: 507px;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  padding-left: 40px;
+  transform: translateY(50px);
 }
 
+@media screen and (min-width: 80em) { /*carousel section, larger than 80em*/
+  .carousel-grid {
+    display: flex;
+    padding-block: 20rem;
+    width: min(100%, 100rem);
+    margin-inline: auto;
+    justify-content: center;
+    margin-top: 15em;
+    margin-bottom: 10em;
+  }
+  .carousel {
+    width: 57em;
+    margin-top: 0px;
+  }
+  .carousel-control-next {
+    transform: translateX(30px);
+  }
+  .carousel-grid-description-container {
+    width: 390px;
+    height: 507px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+  }
+
+  .carousel-grid-description-container_h5 h5{
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    color: #FFFFFF;
+    letter-spacing: 3px;
+    font-weight: 300;
+  }
+  .carousel-grid-description-container_h2 h2{
+    font-family: "Montserrat", sans-serif;
+    font-size: 50px;
+    color: #FFFFFF;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .carousel-grid-description-container_paragraph1{
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .carousel-grid-description-container_paragraph2{
+    padding-bottom: 15px;
+  }
+  /*description portion*/
+  .description-grid {
+    display: flex;
+    justify-content: center;
+    line-height: 175%;
+  }
+  .description-grid a {
+    color: #00BBB2;
+    transition: color 300ms;
+  }
+  .description-grid a:hover {
+    color: #FFFFFF;
+  }
+  .description-grid p {
+    margin-bottom: 1.25em;
+  }
+  .description-grid  ul { /*stackoverflow paste, indenting each line*/
+    list-style-type: disc;
+    list-style-position: inside;
+    text-indent: -1em;
+    padding-left: 1em;
+  }
+  .description-container1 {
+    width: 565px;
+    height: 505px;
+    padding-right: 20px;
+  }
+  .description-container2 {
+    width: 565px;
+    height: 505px;
+    padding-right: 20px;
+  }
+  .container-box {
+    margin: 30px auto;
+    padding: 0 30px;
+  }
+
+  .description-container { /*It's in one container, didn't need 2*/
+    width: 1170px;
+    height: 700px;
+    padding: 10px;
+    column-width: 570px;
+    inline-size: 570px;
+    transform: translateX(-50%);
+  }
+}
+
+/*smaller than 80 em width*/
+.carousel-grid {
+  padding-block: 10rem;
+}
+.carousel-grid-description-container {
+  margin: 1em;
+  padding-top: 4em;
+}
 .carousel-grid-description-container_h5 h5{
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
@@ -322,6 +435,25 @@ nav ul li ul li a:hover{
 .carousel-grid-description-container_paragraph2{
   padding-bottom: 15px;
 }
+
+.description-grid a {
+  color: #00BBB2;
+  transition: color 300ms;
+}
+.description-grid a:hover {
+  color: #FFFFFF;
+}
+.description-grid p {
+  margin-bottom: 1.25em;
+}
+.description-grid  ul { /*stackoverflow paste, indenting each line*/
+  list-style-type: disc;
+  list-style-position: inside;
+  text-indent: -1em;
+  padding-left: 1em;
+}
+/* end of smaller than 80 em width*/
+
 .carousel-grid-description-container_paragraph2 strong{
   color: #FFFFFF;
 }
@@ -346,55 +478,21 @@ nav ul li ul li a:hover{
   cursor: pointer;
   background-color: #C9C9C9;
   -webkit-transition: background-color 300ms linear; /*stackoverflow paste*/
--ms-transition: background-color 300ms linear;
-transition: background-color 300ms linear;
+  -ms-transition: background-color 300ms linear;
+  transition: background-color 300ms linear;
 }
 
 #description {
   color: #C9C9C9;
   font-family: "Open Sans", sans-serif;
   font-size: 17px;
+  margin: 1em;
 }
-.description-grid {
-  display: flex;
-  justify-content: center;
-  line-height: 175%;
+
+/*sublinks*/
+.active-link {
+  color: #00BBB2 !important; /*important needed to ovveride white from nested class*/
 }
-.description-grid a {
-  color: #00BBB2;
-  transition: color 300ms;
-}
-.description-grid a:hover {
-  color: #FFFFFF;
-}
-.description-grid p {
-  margin-bottom: 1.25em;
-}
-.description-grid  ul { /*stackoverflow paste, indenting each line*/
-  list-style-type: disc;
-  list-style-position: inside;
-  text-indent: -1em;
-  padding-left: 1em;
-}
-.description-container1 {
-  width: 565px;
-  height: 505px;
-  padding-right: 20px;
-}
-.description-container2 {
-  width: 565px;
-  height: 505px;
-  padding-right: 20px;
-}
-.container-box {
-  margin: 30px auto;
-  padding: 0 30px;
-}
-.description-container { /*It's in one container, didn't need 2*/
-  width: 1170px;
-  height: 700px;
-  padding: 10px;
-  column-width: 570px;
-  inline-size: 570px;
-  transform: translateX(-50%);
+.active-link:hover {
+  background: black;
 }
