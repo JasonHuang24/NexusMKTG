@@ -180,6 +180,15 @@ nav ul li ul li a:hover{
  z-index: -2;
 }
 
+@media screen and (min-width: 1000px) {
+  .container {
+    min-height: 100em !important;
+  }
+  .hands-typing {
+    min-height: 100em !important;
+    object-fit: cover;
+  }
+}
 .container {
   position: relative;
   color: white;
@@ -209,7 +218,6 @@ nav ul li ul li a:hover{
 }
 
 @media screen and (max-width: 600px) {
-
   .centered {
     position: absolute;
     top: 50%;
@@ -219,9 +227,9 @@ nav ul li ul li a:hover{
     height: 117px;
   }
 }
+/*End of Intro sectione*/
 
-/*Headings*/
-
+/*Global Headings*/
 h2 {
   font-size: 50px;
   text-align: center;
@@ -252,6 +260,7 @@ h1 {
   text-transform: none;
   letter-spacing: 2px;
 }
+/*End of Global Headings*/
 
 /*Specialities section, unordered list classes*/
 .center-box {
@@ -543,7 +552,6 @@ section {
 }
 
 /*book a consultation section*/
-
 #book-a-consultation h3 {
   text-align: left;
   font-size: 21px;
@@ -601,7 +609,6 @@ section {
 .container-box {
   margin: 30px auto;
   padding: 0 30px;
-
 }
 
 .book-a-consultation-strong {
@@ -653,8 +660,8 @@ section {
   .book-a-consultation-container2 {
     margin-left: 0px;
   }
-
 }
+/*End of book a consultation section*/
 
 /*footer section*/
 

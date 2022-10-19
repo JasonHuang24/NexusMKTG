@@ -40,6 +40,15 @@ app.get("/deliberate-directions", function(req, res){
 app.get("/pass-request", (req, res) => {
   res.render('website portfolio/pass-request', { title: 'PASS-Request' })
 });
+
+app.get("/seo-writing-and-media", (req, res) => {
+  res.render('seo-writing-and-media', { title: 'SEO, Strategy, Writing, and Marketing Production' })
+});
+
+app.get("/blog", (req, res) => {
+  res.render('blog', { title: 'Marketing Guides' })
+});
+
 //admin routes
 app.use('/admin', adminRoutes);
 

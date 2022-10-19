@@ -1,13 +1,9 @@
 body{
   background-color: black;
+  color: #FFFFFF;
 }
 
-p, h1, h2, h3, a, ul{
-  /*margin: 0;*/
-  /*padding: 0;*/
-  /*text-decoration: none;*/
-}
-
+/*Footer section*/
 footer{
   color: #C9C9C9;
   text-align: center;
@@ -25,18 +21,29 @@ footer{
   height: 40px;
   transform: translateY(-13px);
 }
-h2{
-   /*margin-bottom: 40px;*/
+/*End of Footer section*/
+
+/*Headings*/
+h2 {
+  font-size: 50px;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  margin-bottom: 30px;
 }
+
 h3{
    /*margin-bottom: 8px;*/
 }
+/*End of Headings*/
+
+
 .content{
   margin-left: 20px;
 }
 
-/* index styles */
-.blogs a{
+/*Admin Panel Section*/
+.blogs a{ /* index styles */
   display: block;
   margin: 40px 0;
   padding-left: 30px;
@@ -46,8 +53,8 @@ h3{
   color: crimson;
 }
 
-/* details styles */
-.details{
+
+.details{ /* details styles */
   position: relative;
   color: #FFFFFF;
   top: 100px;
@@ -66,8 +73,8 @@ h3{
   box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
 }
 
-/* create styles */
-.create-blog {
+
+.create-blog { /* create styles */
   margin-top: 100px;
 }
 .create-blog form{
@@ -98,6 +105,7 @@ textarea{
   font-size: 1.2em;
   cursor: pointer;
 }
+/*End of Admin Panel Section*/
 
 /*navbar styling*/
 nav {
@@ -233,7 +241,7 @@ nav ul li ul li a:hover{
 /*styling for navbar during shrunken page*/
 .nav-active {
   opacity: 100%;
-  transform: translateY(100%);
+  transform: translateY(95%);
   width: 100%;
   transition: transform 0.5s ease-in;
   position: absolute;
@@ -313,7 +321,8 @@ nav ul li ul li a:hover{
   transform: translateY(50px);
 }
 
-@media screen and (min-width: 80em) { /*carousel section, larger than 80em*/
+/*carousel section, larger than 80em*/
+@media screen and (min-width: 80em) {
   .carousel-grid {
     display: flex;
     padding-block: 20rem;
@@ -405,6 +414,7 @@ nav ul li ul li a:hover{
     transform: translateX(-50%);
   }
 }
+/*End of carousel section, larger than 80em*/
 
 /*smaller than 80 em width*/
 .carousel-grid {
@@ -496,3 +506,307 @@ nav ul li ul li a:hover{
 .active-link:hover {
   background: black;
 }
+
+/*SEO Writing and Media Webpage*/
+/*Intro section, defining classes for text over image*/
+#intro {
+ position: relative;
+ z-index: -2;
+}
+@media screen and (min-width: 1000px) {
+  .container {
+    min-height: 100em !important;
+  }
+  .hands-typing {
+    min-height: 100em !important;
+    object-fit: cover;
+  }
+}
+.container-intro {
+  position: relative;
+  color: white;
+  z-index: 0;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 525px;
+  height: 117px;
+}
+
+.centered h4 { /*Nesting required to override bootstrap*/
+  font-size: 1.2352941176471rem;
+  line-height: 1.4;
+  font-weight: 600;
+  font-family: 'Montserrat',sans-serif;
+  text-transform: none;
+}
+
+.centered h1 { /*Nesting required to override bootstrap*/
+  font-size: 2.4705882352941rem;
+  font-weight: 400;
+  font-family: 'Montserrat',sans-serif;
+  line-height: 1.4;
+  text-transform: none;
+}
+
+.hands-typing {
+  opacity: 100%;
+  width: 100%;
+}
+
+.hands-typing-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: linear-gradient(180deg, #000000C4 71%, #000000 100%);
+}
+
+@media screen and (max-width: 600px) {
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 117px;
+  }
+}
+/*End of Intro sectione*/
+
+/*Writing portfolio section*/
+#writing-portfolio h2 {
+  text-align: center;
+}
+.writing-portfolio-subtext {
+  display: flex; /*flex required to center things*/
+  align-items: center; /*vertical center*/
+  justify-content: center; /*horizontal center*/
+}
+.writing-portfolio-subtext-container{
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0px 0px 20px;
+  color: #C9C9C9;
+  width: 56.25rem;
+}
+.writing-portfolio-subtext-container strong{
+  color: #FFFFFF;
+}
+.writing-portfolio-gallery{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.writing-portfolio-grid {
+  max-width: 70rem;
+  display: grid;
+  gap: 1rem;
+  margin: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+@media screen and (max-width: 750px) {
+  .writing-portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.writing-portfolio-gallery-image img {
+  max-width: 100%; /*shrink image to match grid*/
+  max-height: 100%;
+}
+.writing-portfolio-links div a {
+  color: #C9C9C9;
+}
+/*End of Writing portfolio section*/
+
+/*Media production portfolio section*/
+#media-production-portfolio h2 {
+  text-align: center;
+}
+.media-production-portfolio-subtext {
+  display: flex; /*flex required to center things*/
+  align-items: center; /*vertical center*/
+  justify-content: center; /*horizontal center*/
+}
+.media-production-portfolio-subtext-container{
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0px 0px 20px;
+  color: #C9C9C9;
+  width: 56.25rem;
+}
+.media-production-portfolio-gallery{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.media-production-portfolio-grid {
+  max-width: 70rem;
+  display: grid;
+  gap: 1rem;
+  margin: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media screen and (max-width: 750px) {
+  .media-production-portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.media-production-portfolio-gallery-video iframe {
+  max-width: 100%; /*shrink image to match grid*/
+  max-height: 100%;
+  margin-bottom: 0px;
+  width: 426px; /*640 x 360 made the grid too high*/
+  height: 240px;
+}
+
+.media-production-portfolio-gallery-item div p {
+  color: #C9C9C9;
+  text-align: center;
+}
+/*End of Media production portfolio section*/
+
+/*Book a consultation section*/
+.container-box {
+  margin: 30px auto;
+  padding: 0 30px;
+  margin-top: 5em;
+}
+
+.book-a-consultation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 33em);
+  overflow: hidden;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.book-a-consultation-container {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.book-a-consultation-container-h2 {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.book-a-consultation-img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.book-a-consultation-strong {
+  color: white;
+}
+
+.center-flexbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.book-a-cons-paragraph {
+  text-align: center;
+  margin: 20px;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+}
+.light-gray {
+  color: #C9C9C9;
+}
+@media screen and (max-width: 1000px) {
+
+  .book-a-consultation-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .book-a-consultation-container2 {
+    margin-left: 0px;
+  }
+}
+/*End of Book a consultation section*/
+
+/*End of SEO Writing and Media Webpage*/
+
+/*Blog Webpage*/
+.blog-gallery{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10rem;
+}
+
+.blog-grid {
+  max-width: 100rem;
+  display: grid;
+  gap: 1rem;
+  margin: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media screen and (max-width: 1000px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 750px) {
+  .blog-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.blog-item {
+  background-color: #E1E1E1;
+  padding: 1.25rem;
+  transition: background-color 300ms;
+}
+.blog-item:hover {
+  background-color: #FFFFFF;
+}
+.blog-item a {
+  color: #000000;
+}
+.blog-image-container {
+  padding-bottom: calc( 0.66 * 100% ); /*copied properties and values from Elementor*/
+  overflow: hidden;
+  position: relative;
+}
+.blog-image-container img {
+  height: auto; /*copied properties and values from Elementor*/
+  position: absolute;
+  top: calc(50% + 1px);
+  left: calc(50% + 1px);
+  transform: scale(1.01) translate(-50%,-50%);
+  display: block;
+  width: 100%;
+  max-height: none;
+  max-width: none;
+  vertical-align: middle;
+}
+
+.blog-text-container {
+  color: #C9C9C9;
+  text-align: center;
+}
+
+.blog-title {
+  font-family: 'Montserrat',sans-serif;
+  line-height: 1.4;
+  font-size: 1.2rem;
+  margin: 1rem 0 1rem 0;
+}
+
+.blog-excerpt {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+  color: #000000;
+}
+/*End of Blog Webpage*/
