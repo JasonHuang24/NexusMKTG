@@ -6,12 +6,15 @@ const mongoose = require('mongoose');
 const adminRoutes = require('./routes/adminRoutes')
 //express app
 const app = express();
+const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({extended: true}));
+
+
 
 // connect to mongodb & listen for requests
 const dbURI = "mongodb+srv://xinguanghuang:3XaSi1N6uL6Dj62d@cluster0.okasz7m.mongodb.net/node-tuts?retryWrites=true&w=majority";
 mongoose.connect(dbURI)
-  .then((result) => app.listen(3000))
+  .then((result) => app.listen(port))
   .catch((err) => console.log(err));
 
 //register view engine
