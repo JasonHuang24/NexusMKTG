@@ -1,0 +1,31 @@
+<html lang="en">
+<%- include('../partials/head-sublinks.ejs') %>
+
+<body>
+  <%- include("../partials/nav.ejs") %>
+
+  <div class="create-blog content">
+    <form action="/editAdmin" method="POST"> <!--action must be a model-->
+      <label for="name">Name:</label>
+      <input type="text" id="name-id" name="name" required>
+      <label for="category">Category:</label>
+      <input type="text" id="category-id" name="category" required>
+      <label for="pageTitle">Page Title:</label>
+      <input type="text" id="pageTitle-id" name="pageTitle" value="">
+      <label for="description">Description:</label>
+      <textarea id="description-id" name="description" required></textarea>
+      <label for="builtIn">Built In:</label>
+      <input type="text" id="builtIn-id" name="builtIn" value="">
+      <label for="caseStudy">Case Study:</label>
+      <textarea id="caseStudy-id" name="caseStudy" required></textarea>
+      <button>Submit</button>
+    </form>
+  </div>
+  <section id="footer">
+  <%- include("../partials/footer.ejs") %>
+  </section>
+  <!--link to javascript file-->
+  <script src="/index.js">
+  </script>
+</body>
+</html>

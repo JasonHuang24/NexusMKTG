@@ -4,8 +4,7 @@ const adminController = require('../controllers/adminController');
 
 router.get('/', adminController.admin_index);
 router.post('/', adminController.admin_create_post);
-//order matters must be above :id
-router.get('/create', adminController.admin_create_get);
+router.get('/create', adminController.admin_create_get); //order matters must be above :id
 router.get('/:id', adminController.admin_details);
 router.delete('/:id', adminController.admin_delete);
 

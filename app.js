@@ -4,11 +4,11 @@ const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const mongoose = require('mongoose');
 const adminRoutes = require('./routes/adminRoutes')
+const editAdminRoutes = require('./routes/editAdminRoutes') //Edit AdminRoutes Access
 //express app
 const app = express();
 const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({extended: true}));
-
 
 
 // connect to mongodb & listen for requests
@@ -52,8 +52,15 @@ app.get("/blog", (req, res) => {
   res.render('blog', { title: 'Marketing Guides' })
 });
 
+/* Why doesn't this work when I refractor?
+app.get("/wholesome-food-services", (req, res) => {
+  res.render('website portfolio/wholesome-food-services', { title: 'Wholesome Food Services' })
+});
+*/
+
 //admin routes
 app.use('/admin', adminRoutes);
+app.use('/editAdmin', editAdminRoutes);
 
 //404 Page, needs to be at the bottom or else will fire before redirects.
 app.use((req, res) => {

@@ -37,10 +37,14 @@ h3{
 }
 /*End of Headings*/
 
-
+/*404 Page*/
 .content{
   margin-left: 20px;
 }
+.not-found {
+  margin-top: 10rem;
+}
+/*End of 404 Page*/
 
 /*Admin Panel Section*/
 .blogs a{ /* index styles */
